@@ -1,0 +1,21 @@
+{
+  "name": "awery-website",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.ts",
+  "scripts": {
+    "start": "npm run dev",
+    "prod": "tsx index.ts",
+    "dev": "tsx watch index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.14.7",
+    "tsx": "^4.15.6"
+  },
+  "dependencies": {
+    "fastify": "^4.28.0"
+  }
+}
