@@ -16,6 +16,8 @@
     "tsx": "^4.15.6"
   },
   "dependencies": {
-    "fastify": "^4.28.0"
+    "@fastify/view": "^9.1.0",
+    "fastify": "^4.28.0",
+    "mustache": "^4.2.0"
   }
 }
