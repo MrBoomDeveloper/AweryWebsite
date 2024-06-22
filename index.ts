@@ -2,9 +2,11 @@ import fastify from "fastify";
 import baseRoute from "./routes";
 import fastifyView from "@fastify/view";
 import Mustache from "mustache";
+import http from "http";
 
 const app = fastify({
-	logger: true
+	logger: true,
+	serverFactory: http.createServer
 });
 
 app.register(fastifyView, {
