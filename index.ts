@@ -1,18 +1,20 @@
 import fastify from "fastify";
 import baseRoute from "./routes";
 import fastifyView from "@fastify/view";
-import Mustache from "mustache";
-import http from "http";
+import { createServer } from "http";
+import { Eta } from "eta";
 
 const app = fastify({
 	logger: true,
-	serverFactory: http.createServer
+	serverFactory: createServer
 });
 
+export type ServerApp = typeof app;
+
 app.register(fastifyView, {
-	engine: {
-		mustache: Mustache
-	}
+	layout: "base/index.eta",
+	root: "web/",
+	engine: { eta: new Eta() }
 });
 
 app.register(baseRoute);

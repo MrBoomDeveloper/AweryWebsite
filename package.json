@@ -7,13 +7,11 @@
   "scripts": {
     "sass": "sass web:generated/styles",
     "sass_watch": "sass --watch web:generated/styles",
-
     "tsx": "tsx index.ts",
     "tsx_watch": "tsx watch index.ts",
-
     "start": "npm run dev",
-    "prod": "npm run sass && npm run tsx",
-    "dev": "npm-run-all --parallel sass_watch tsx_watch"
+    "prod": "set NODE_ENV=PRODUCTION && npm run sass && npm run tsx",
+    "dev": "set NODE_ENV=DEVELOPMENT && npm-run-all --parallel sass_watch tsx_watch"
   },
   "author": "",
   "license": "ISC",
@@ -24,8 +22,8 @@
   },
   "dependencies": {
     "@fastify/view": "^9.1.0",
+    "eta": "^3.4.0",
     "fastify": "^4.28.0",
-    "mustache": "^4.2.0",
     "sass": "^1.77.6"
   }
 }

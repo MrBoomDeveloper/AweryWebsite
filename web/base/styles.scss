@@ -1,0 +1,44 @@
+html {
+	background-color: black;
+	color: white;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+.awery-center {
+	align-self: center;
+	justify-self: center;
+	max-width: 1000px;
+	width: 100%;
+	padding-inline: 2rem;
+}
+
+.awery-header {
+	display: flex;
+	justify-content: center;
+
+	.awery-header-content {
+		display: flex;
+		align-items: center;
+		padding-block: 1rem;
+
+		.awery-header-logo {
+			width: 3rem;
+			margin-right: 1rem;
+		}
+
+		.awery-header-name {
+			font-weight: 700;
+			font-size: 2rem;
+			font-family: sans-serif;
+		}
+	}
+}
+
+.awery-footer {
+	display: flex;
+	justify-content: center;
+}

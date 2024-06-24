@@ -1,0 +1,8 @@
+<div class="awery-center">
+	<h1><%= it.i18n.app_slogan %></h1>
+	<p><%= it.i18n.app_description %></p>
+
+	<a href="https://github.com/MrBoomDeveloper/Awery">
+		<button>Learn more</button>
+	</a>
+</div>

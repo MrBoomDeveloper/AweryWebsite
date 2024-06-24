@@ -1,6 +1,6 @@
 import fastify, { FastifyRequest } from "fastify";
-import * as en from "../static/internalization/en.json";
-import * as ru from "../static/internalization/ru.json";
+import * as en from "@public/internalization/en.json";
+import * as ru from "@public/internalization/ru.json";
 
 const maps: Record<string, Record<string, string>> = {
 	"ru": ru, "ru-RU": ru, "ua": ru, "uk": ru, "uk-UA": ru, "be": ru, "be-BY": ru,

@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"resolveJsonModule": true,
+
+		"paths": {
+			"@/*": [ "./*" ],
+			"@utils/*": [ "./utils/*" ],
+			"@routes/*": [ "./routes/*" ],
+			"@web/*": [ "./web/*" ],
+			"@public/*": [ "./public/*" ],
+		}
+	}
+}
