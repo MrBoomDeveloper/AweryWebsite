@@ -12,7 +12,7 @@ const app = fastify({
 export type ServerApp = typeof app;
 
 app.register(fastifyView, {
-	layout: "base/index.eta",
+	layout: "base/index.html",
 	root: "web/",
 	engine: { eta: new Eta() }
 });

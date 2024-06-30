@@ -5,7 +5,7 @@ import { ServerApp } from "@/index";
 
 function errorPage(request, reply) {
 	return reply.status(404)
-		.view("error/index.eta", {
+		.view("error/index.html", {
 			styles: "/styles/error.css",
 			title: "Page not found",
 			code: 404,
@@ -19,7 +19,7 @@ export default async function baseRoute(app: ServerApp) {
 		const i18n = getInternalizationMap(request);
 
 		return reply.status(200)
-			.view("home/index.eta", { 
+			.view("home/index.html", { 
 				title: i18n.app_slogan,
 				description: i18n.app_description,
 				styles: "/styles/home.css",

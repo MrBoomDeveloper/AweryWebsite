@@ -1,4 +1,0 @@
-<h1 style="font-size: 3em">Error <%= it.code %></h1>
-<p><%= it.description %></p>
-
-<a href="/"><button>Go to homepage</button></a>
