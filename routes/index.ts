@@ -5,6 +5,7 @@ import { ServerApp } from "@/index";
 
 function errorPage(request, reply) {
 	return reply.status(404)
+		.header("Cache-Control", "public, max-age=3600")
 		.view("error/index.html", {
 			styles: "/styles/error.css",
 			title: "Page not found",
@@ -19,6 +20,7 @@ export default async function baseRoute(app: ServerApp) {
 		const i18n = getInternalizationMap(request);
 
 		return reply.status(200)
+			.header("Cache-Control", "public, max-age=3600")
 			.view("home/index.html", { 
 				title: i18n.app_slogan,
 				description: i18n.app_description,
@@ -47,11 +49,12 @@ export default async function baseRoute(app: ServerApp) {
 
 	app.get("/styles/:file", async (request: FastifyRequest<{ Params: { file: string } }>, reply) => {
 		const name = request.params.file;
-		const path = `generated/styles/${name.substring(0, name.lastIndexOf("."))}/styles.css`;
+		const path = `public/styles/${name.substring(0, name.lastIndexOf("."))}/styles.css`;
 
 		try {
 			return reply.status(200)
 				.header("Content-Type", "text/css")
+				.header("Cache-Control", "public, max-age=3600")
 				.send(await readFile(path, "utf8"));
 		} catch(e) {
 			return reply.status(404)

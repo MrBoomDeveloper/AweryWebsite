@@ -5,14 +5,15 @@
   "type": "commonjs",
   "main": "index.ts",
   "scripts": {
-    "sass": "sass web:generated/styles",
-    "sass_watch": "sass --watch web:generated/styles",
+    "sass": "sass web:public/styles",
+    "sass_watch": "sass --watch web:public/styles",
     "tsx": "tsx index.ts",
     "tsx_watch": "tsx watch index.ts",
     "start": "npm run dev",
     "prod": "set NODE_ENV=PRODUCTION && npm run sass && npm run tsx",
     "dev": "set NODE_ENV=DEVELOPMENT && npm-run-all --parallel sass_watch tsx_watch",
-    "update": "git pull origin && npm i && tsc && tsc-alias"
+    "build": "tsc && tsc-alias",
+    "update": "git pull origin && npm i"
   },
   "author": "",
   "license": "ISC",
