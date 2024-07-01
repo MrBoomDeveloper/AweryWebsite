@@ -5,6 +5,9 @@ import { createServer } from "http";
 import { Eta } from "eta";
 
 const app = fastify({
+	ignoreTrailingSlash: true,
+	ignoreDuplicateSlashes: true,
+	caseSensitive: false,
 	logger: true,
 	serverFactory: createServer
 });
