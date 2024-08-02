@@ -1,6 +1,21 @@
-html {
-	background-color: black;
-	color: white;
+
+@import "./components.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+$font-lato: 'Lato', sans-serif;
+
+*, *::before, *::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+:root {
+	color-scheme: light dark;
+
+	@media (prefers-color-scheme: dark) {
+		background-color: #0f0f0f;
+	}
 }
 
 body {
@@ -8,37 +23,21 @@ body {
 	flex-direction: column;
 }
 
-.awery-center {
-	align-self: center;
-	justify-self: center;
-	max-width: 1000px;
-	width: 100%;
-	padding-inline: 2rem;
+h1 {
+	font-family: $font-lato;
+	font-weight: 900;
 }
 
-.awery-header {
-	display: flex;
-	justify-content: center;
-
-	.awery-header-content {
-		display: flex;
-		align-items: center;
-		padding-block: 1rem;
-
-		.awery-header-logo {
-			width: 3rem;
-			margin-right: 1rem;
-		}
-
-		.awery-header-name {
-			font-weight: 700;
-			font-size: 2rem;
-			font-family: sans-serif;
-		}
-	}
+h2, h3, h4, h5, h6 {
+	font-family: $font-lato;
+	font-weight: 700;
 }
 
-.awery-footer {
-	display: flex;
-	justify-content: center;
+p, button, a, span, li, input, textarea {
+	font-family: $font-lato;
+	font-weight: 400;
+}
+
+a {
+	text-decoration: none;
 }

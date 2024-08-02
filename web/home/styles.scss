@@ -1,1 +1,15 @@
 @import "../base/styles.scss";
+
+.hero-info {
+	max-width: 500px;
+	padding-block: 2rem;
+}
+
+.hero-title {
+	font-size: 2em;
+}
+
+.hero-description {
+	margin-top: .75em;
+	margin-bottom: 1.25em;
+}

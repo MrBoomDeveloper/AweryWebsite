@@ -2,10 +2,11 @@ import { FastifyInstance, FastifyRequest } from "fastify";
 import getInternalizationMap from "../utils/internalization";
 import { readFile, stat } from "fs/promises";
 import { ServerApp } from "@/index";
+import { isProd } from "@/utils/fun";
 
 function errorPage(request, reply) {
 	return reply.status(404)
-		.header("Cache-Control", "public, max-age=3600")
+		.header("Cache-Control", isProd() ? "public, max-age=3600" : "no-cache")
 		.view("error/index.html", {
 			styles: "/styles/error.css",
 			title: "Page not found",
@@ -47,14 +48,14 @@ export default async function baseRoute(app: ServerApp) {
 		}
 	});
 
-	app.get("/styles/:file", async (request: FastifyRequest<{ Params: { file: string } }>, reply) => {
-		const name = request.params.file;
-		const path = `public/styles/${name.substring(0, name.lastIndexOf("."))}/styles.css`;
+	app.get("/styles/:file", async ({ params: { file }}: FastifyRequest<{ Params: { file: string } }>, reply) => {
+		const fileExtension = file.substring(file.lastIndexOf("/") + 1).substring(file.indexOf(".") + 1);
+		const path = `public/styles/${file.substring(0, file.lastIndexOf("."))}/styles.${fileExtension}`;
 
 		try {
 			return reply.status(200)
-				.header("Content-Type", "text/css")
-				.header("Cache-Control", "public, max-age=3600")
+				.header("Content-Type", fileExtension === "css.map" ? "application/json" : "text/css")
+				.header("Cache-Control", isProd() ? "public, max-age=3600" : "no-cache")
 				.send(await readFile(path, "utf8"));
 		} catch(e) {
 			return reply.status(404)
