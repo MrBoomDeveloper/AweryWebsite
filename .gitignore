@@ -1,4 +1,6 @@
-/.vscode
-/node_modules
-/dist
-/public/styles
+.env
+.netlify
+.hugo_build.lock
+node_modules
+public
+resources
