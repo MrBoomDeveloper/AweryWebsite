@@ -8,7 +8,6 @@
       "body",
       "button",
       "circle",
-      "code",
       "details",
       "div",
       "footer",
@@ -16,7 +15,6 @@
       "g",
       "h1",
       "h2",
-      "h3",
       "h5",
       "head",
       "header",
@@ -49,7 +47,6 @@
     "classes": [
       "DocSearch-Label",
       "active",
-      "anchor",
       "bg-dots",
       "blog",
       "blog-header",
@@ -115,13 +112,12 @@
       "icon-tabler",
       "icon-tabler-arrow-left",
       "icon-tabler-arrow-right",
+      "icon-tabler-brand-discord",
       "icon-tabler-brand-github",
       "icon-tabler-clock",
       "icon-tabler-dots-vertical",
       "icon-tabler-menu",
-      "icon-tabler-moon",
       "icon-tabler-search",
-      "icon-tabler-sun",
       "icon-tabler-x",
       "justify-content-between",
       "justify-content-center",
@@ -138,7 +134,6 @@
       "mb-0",
       "me-2",
       "me-auto",
-      "me-lg-1",
       "me-lg-3",
       "message",
       "modal",
@@ -153,7 +148,6 @@
       "ms-2",
       "ms-3",
       "ms-auto",
-      "ms-lg-2",
       "mt-3",
       "mt-n3",
       "mx-2",
@@ -225,8 +219,6 @@
       "wrap"
     ],
     "ids": [
-      "TableOfContents",
-      "buttonColorMode",
       "doks-docs-nav",
       "further-reading",
       "offcanvasNavMain",
@@ -240,8 +232,7 @@
       "searchResults",
       "searchToggleDesktop",
       "searchToggleMobile",
-      "socialMenu",
-      "toc"
+      "socialMenu"
     ]
   }
 }

@@ -5,6 +5,7 @@
   "author": "Thulite",
   "license": "MIT",
   "scripts": {
+    "start": "npm run dev",
     "create": "hugo new",
     "dev": "hugo server --disableFastRender --noHTTPCache",
     "format": "prettier **/** -w -c",
